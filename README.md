@@ -14,7 +14,7 @@ NU 「 no-ui 」 组件库系统 nu-system，弹窗组件 原生 JS 实现。
 1. 弹窗显示和隐藏的时候切换了一个，控制状态的 class `_open`;
 2. 弹窗显示和隐藏的时候切换了 `body` 的滚动状态;
 
-`@_nu/js-dialog` 本身不会输出任何样式，对应的 Dom 结构和相应的 class 均来自于 [vanilla-dialog](https://nu-system.github.io/css/dialog/)。
+`@_nu/js-dialog` 本身不会输出任何样式，对应的 Dom 结构和相应的 class 均来自于 [css-dialog](https://nu-system.github.io/css/dialog/)。
 
 ## 怎么用？
 
