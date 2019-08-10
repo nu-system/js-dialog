@@ -1,0 +1,44 @@
+{
+  "name": "@_nu/js-dialog",
+  "version": "0.0.1",
+  "description": "nu-system dialog component pure js version",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "cp -r demo/dialog/ ./lib",
+    "prepublishOnly": "npm run build",
+    "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "commitInit": "commitizen init cz-conventional-changelog --yarn --dev --exact"
+  },
+  "files": [
+    "lib",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nu-system/js-dialog.git"
+  },
+  "keywords": [
+    "dialog",
+    "vanilla",
+    "js"
+  ],
+  "author": "yfe-team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nu-system/js-dialog/issues"
+  },
+  "homepage": "https://github.com/nu-system/js-dialog#readme",
+  "devDependencies": {
+    "commitizen": "^4.0.3",
+    "conventional-changelog-cli": "^2.0.23",
+    "cz-conventional-changelog": "3.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

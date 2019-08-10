@@ -1,0 +1,9 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@_nu/vanilla-dialog": "^0.0.1"
+  }
+}

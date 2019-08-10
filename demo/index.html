@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/@_nu/vanilla-dialog/css/core.css">
+    <link rel="stylesheet" href="node_modules/@_nu/vanilla-dialog/css/position/middle.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            height: 2000px;
+            background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent),
+                linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent),
+                linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
+            background-size: 50px 50px;
+            text-align: center;
+        }
+
+        .dialog-body {
+            max-height: 200px;
+            overflow: auto;
+        }
+
+        .dialog-test {
+            height: 500px;
+            background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent),
+                linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent),
+                linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
+            background-size: 50px 50px;
+        }
+
+        .button {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <button class="j_dialog_trigger button" type="button">显示弹窗</button>
+    </div>
+    <div id="dialogHello" class="j_dialog nu_dialog_wrap _middle">
+        <label class="nu_dialog_mask j_close" title="mask"></label>
+        <div class="nu_dialog">
+            <label class="nu_dialog_close j_close" title="close">&times;</label>
+            <div class="dialog-body">
+                <div class="dialog-test">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./dialog/index.js"></script>
+    <script>
+        (function () {
+            const $btn = document.querySelector('.j_dialog_trigger');
+            $btn.addEventListener("click", function (e) {
+                e.preventDefault();
+                new NuDialog({
+                    sel: '#dialogHello',
+                    onShow:function(api){
+                        console.log(api);
+                        return true;
+                    },
+                    onAfterShow:function(){
+                        console.log('显示之后');
+                    },
+                    onClose:function(){
+                        console.log('关闭弹窗');
+                        return true;
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
